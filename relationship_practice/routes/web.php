@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('findUser/{id}', [PhoneController::class, 'getUserOfPhone'])->name('phone.user');
+
+Route::get('findPhone/{id}', [PhoneController::class, 'getPhoneOfUser'])->name('user.phone');
