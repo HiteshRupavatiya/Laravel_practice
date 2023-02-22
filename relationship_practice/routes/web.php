@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::get('findUserPhone/{id}', [PhoneController::class, 'getUserOfPhone'])->na
 Route::get('findPost/{id}', [CommentController::class, 'getPostOfComment'])->name('comment.post');
 
 Route::get('findComments/{id}', [CommentController::class, 'getCommentOfPost'])->name('post.comment');
+
+Route::get('findAllOwner/{id}',[MechanicController::class,'getAllOwnerOfCar'])->name('cars.owner');
+
+Route::get('findAllMechanic/{id}',[MechanicController::class,'getAllMechanicOfCar'])->name('cars.mechanic');
