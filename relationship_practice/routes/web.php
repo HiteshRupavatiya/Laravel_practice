@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,7 @@ Route::get('/', function () {
 Route::get('findUser/{id}', [PhoneController::class, 'getUserOfPhone'])->name('phone.user');
 
 Route::get('findPhone/{id}', [PhoneController::class, 'getPhoneOfUser'])->name('user.phone');
+
+Route::get('findPost/{id}',[CommentController::class,'getPostOfComment'])->name('comment.post');
+
+Route::get('findComments/{id}',[CommentController::class,'getCommentOfPost'])->name('post.comment');
