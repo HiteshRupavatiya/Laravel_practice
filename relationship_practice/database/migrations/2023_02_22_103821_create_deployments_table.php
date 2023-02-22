@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('deployments', function (Blueprint $table) {
             $table->id();
+            $table->string('commit_hash');
+            $table->foreignId('environment_id')->constrained('environments');
             $table->timestamps();
         });
     }
