@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('findUser/{id}', [PhoneController::class, 'getUserOfPhone'])->name('phone.user');
+Route::get('findPhoneUser/{id}', [PhoneController::class, 'getPhoneOfUser'])->name('user.phone');
 
-Route::get('findPhone/{id}', [PhoneController::class, 'getPhoneOfUser'])->name('user.phone');
+Route::get('findUserPhone/{id}', [PhoneController::class, 'getUserOfPhone'])->name('phone.user');
 
-Route::get('findPost/{id}',[CommentController::class,'getPostOfComment'])->name('comment.post');
+Route::get('findPost/{id}', [CommentController::class, 'getPostOfComment'])->name('comment.post');
 
-Route::get('findComments/{id}',[CommentController::class,'getCommentOfPost'])->name('post.comment');
+Route::get('findComments/{id}', [CommentController::class, 'getCommentOfPost'])->name('post.comment');
