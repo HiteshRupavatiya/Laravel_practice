@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Environment extends Model
 {
     use HasFactory;
+
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+
+    public function deployments(){
+        return $this->hasMany(Deployment::class);
+    }
 }

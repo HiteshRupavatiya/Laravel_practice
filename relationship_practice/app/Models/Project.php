@@ -15,4 +15,8 @@ class Project extends Model
         // return $this->through('environments')->has('deployments'); // String Based Relation Syntax
         // return $this->throughEnvironments()->hasDeployments(); // Dymnamic Relation Syntax
     }
+
+    public function environment(){
+        return $this->hasMany(Environment::class);
+    }
 }
