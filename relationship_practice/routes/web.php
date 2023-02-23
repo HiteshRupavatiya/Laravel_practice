@@ -40,4 +40,6 @@ Route::get('findProject/{id}', [ProjectController::class, 'getProject']);
 
 Route::get('findDeployments/{id}', [ProjectController::class, 'getDeployments']);
 
-Route::get('getRoles/{id}', [RoleController::class, 'getRoles']);
+Route::get('getRolesOfUser/{id}', [RoleController::class, 'getRolesOfUser']);
+
+Route::get('getUsersByRole/{id}', [RoleController::class, 'getUsersByRole']);

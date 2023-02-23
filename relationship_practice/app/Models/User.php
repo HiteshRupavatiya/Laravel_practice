@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function oldestPhone(){
         return $this->hasOne(Phone::class)->oldestOfMany();
     }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class,'role_persons');
+    }
 }
