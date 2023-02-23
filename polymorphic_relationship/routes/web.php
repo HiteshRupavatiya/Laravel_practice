@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,11 @@ Route::get('UserImage/{id}',[UserController::class,'getUserImage']);
 Route::get('PostComments/{id}',[CommentController::class,'getAllPostComments']);
 
 Route::get('VideoComments/{id}',[CommentController::class,'getAllVideoComments']);
+
+Route::get('PostTag/{id}',[TagController::class,'getTagByPost']);
+
+Route::get('TagPost/{id}',[TagController::class,'getPostByTag']);
+
+Route::get('VideoTag/{id}',[TagController::class,'getTagByVideo']);
+
+Route::get('TagVideo/{id}',[TagController::class,'getVideoByTag']);
