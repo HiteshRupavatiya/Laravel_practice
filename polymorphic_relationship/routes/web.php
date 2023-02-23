@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,7 @@ Route::get('/', function () {
 Route::get('PostImage/{id}',[UserController::class,'getPostImage']);
 
 Route::get('UserImage/{id}',[UserController::class,'getUserImage']);
+
+Route::get('PostComments/{id}',[CommentController::class,'getAllPostComments']);
+
+Route::get('VideoComments/{id}',[CommentController::class,'getAllVideoComments']);
