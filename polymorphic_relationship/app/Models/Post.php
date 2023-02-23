@@ -13,6 +13,14 @@ class Post extends Model
         return $this->morphOne(Image::class,'imageable');
     }
 
+    public function latestPostImage(){
+        return $this->morphOne(Image::class,'imageable')->latestOfMany();
+    }
+
+    public function oldestPostImage(){
+        return $this->morphOne(Image::class,'imageable')->oldestOfMany();
+    }
+
     public function comments(){
         return $this->morphMany(Comment::class,'commentable');
     }
